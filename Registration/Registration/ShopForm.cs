@@ -91,8 +91,8 @@ namespace Registration
 			this.label2.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 200), 120);
 			this.label16.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 20), 10);
 			this.label15.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 40), 10);
-			this.tabControl1.Location = new System.Drawing.Point((int)(SystemInformation.PrimaryMonitorSize.Width * 0.1265), (int)(SystemInformation.PrimaryMonitorSize.Height * 0.205));
-			this.tabControl1.Size = new System.Drawing.Size((int)(SystemInformation.PrimaryMonitorSize.Width*0.728), (int)(SystemInformation.PrimaryMonitorSize.Height*0.72));
+			this.tabControl1.Location = new System.Drawing.Point((int)(SystemInformation.PrimaryMonitorSize.Width * 0.1265), (int)(SystemInformation.PrimaryMonitorSize.Width * 0.8 * 0.205));
+			this.tabControl1.Size = new System.Drawing.Size((int)(SystemInformation.PrimaryMonitorSize.Width * 0.728), (int)(SystemInformation.PrimaryMonitorSize.Width * 0.8 * 0.72));
 			this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
 			
 			for (int i = 0; i < pblist.Count; i++)
