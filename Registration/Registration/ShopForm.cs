@@ -93,6 +93,7 @@ namespace Registration
 			this.label15.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 40), 10);
 			this.tabControl1.Location = new System.Drawing.Point((int)((SystemInformation.PrimaryMonitorSize.Width - (SystemInformation.PrimaryMonitorSize.Height * 1.25*0.728)) / 2), (int)(SystemInformation.PrimaryMonitorSize.Height * 0.205));
 			this.tabControl1.Size = new System.Drawing.Size((int)(SystemInformation.PrimaryMonitorSize.Height * 1.25 * 0.728), (int)(SystemInformation.PrimaryMonitorSize.Height * 0.72));
+			this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
 			for (int i = 0; i < pblist.Count; i++)
 			{
 				int k = i;
@@ -188,7 +189,7 @@ namespace Registration
 			}
 			if (pictureBox5.Location.X == -308)
 			{
-				pictureBox5.Location = new Point(924, 62);
+				pictureBox5.Location = new Point(1232, 62);
 			}
 		}
 
@@ -198,20 +199,51 @@ namespace Registration
 		private void timerPage2()
 		{
 
-			if (pblist1[0].Location.X != 150) { pblist1[0].Location = new Point(pblist1[0].Location.X +10, pblist1[0].Location.Y); }
-			if (pblist1[1].Location.X != 150) { pblist1[1].Location = new Point(pblist1[1].Location.X + 10, pblist1[1].Location.Y); }
-			if (pblist1[2].Location.X != 150) { pblist1[2].Location = new Point(pblist1[2].Location.X + 10, pblist1[2].Location.Y); }
-			if (pblist1[3].Location.X != 150) { pblist1[3].Location = new Point(pblist1[3].Location.X + 10, pblist1[3].Location.Y); }
-
-			if (pblist1[4].Location.X != 420) { pblist1[4].Location = new Point(pblist1[4].Location.X + 10, pblist1[4].Location.Y); }
-			if (pblist1[5].Location.X != 420) { pblist1[5].Location = new Point(pblist1[5].Location.X + 10, pblist1[5].Location.Y); }
-			if (pblist1[6].Location.X != 420) { pblist1[6].Location = new Point(pblist1[6].Location.X + 10, pblist1[6].Location.Y); }
-			if (pblist1[7].Location.X != 420) { pblist1[7].Location = new Point(pblist1[7].Location.X + 10, pblist1[7].Location.Y); }
-
-			if (pblist1[8].Location.X != 730) { pblist1[8].Location = new Point(pblist1[8].Location.X + 10, pblist1[8].Location.Y); }
-			if (pblist1[9].Location.X != 730) { pblist1[9].Location = new Point(pblist1[9].Location.X + 10, pblist1[9].Location.Y); }
-			if (pblist1[10].Location.X != 730) { pblist1[10].Location = new Point(pblist1[10].Location.X + 10, pblist1[10].Location.Y); }
-			if (pblist1[11].Location.X != 730) { pblist1[11].Location = new Point(pblist1[11].Location.X + 10, pblist1[11].Location.Y); }
+			if (pblist1[0].Location.X != 130) { pblist1[0].Location = new Point(pblist1[0].Location.X + 40, pblist1[0].Location.Y); }
+			else
+			{
+				if (pblist1[1].Location.X != 130) { pblist1[1].Location = new Point(pblist1[1].Location.X + 40, pblist1[1].Location.Y); }
+				else
+				{
+					if (pblist1[2].Location.X != 130) { pblist1[2].Location = new Point(pblist1[2].Location.X + 40, pblist1[2].Location.Y); }
+					else
+					{
+						if (pblist1[3].Location.X != 130) { pblist1[3].Location = new Point(pblist1[3].Location.X + 40, pblist1[3].Location.Y); }
+						else
+						{
+							if (pblist1[4].Location.X != 410) { pblist1[4].Location = new Point(pblist1[4].Location.X + 40, pblist1[4].Location.Y); }
+							else
+							{
+								if (pblist1[5].Location.X != 410) { pblist1[5].Location = new Point(pblist1[5].Location.X + 40, pblist1[5].Location.Y); }
+								else
+								{
+									if (pblist1[6].Location.X != 410) { pblist1[6].Location = new Point(pblist1[6].Location.X + 40, pblist1[6].Location.Y); }
+									else
+									{
+										if (pblist1[7].Location.X != 410) { pblist1[7].Location = new Point(pblist1[7].Location.X + 40, pblist1[7].Location.Y); }
+										else
+										{
+											if (pblist1[8].Location.X != 730) { pblist1[8].Location = new Point(pblist1[8].Location.X + 40, pblist1[8].Location.Y); }
+											else
+											{
+												if (pblist1[9].Location.X != 730) { pblist1[9].Location = new Point(pblist1[9].Location.X + 40, pblist1[9].Location.Y); }
+												else
+												{
+													if (pblist1[10].Location.X != 730) { pblist1[10].Location = new Point(pblist1[10].Location.X + 40, pblist1[10].Location.Y); }
+													else
+													{
+														if (pblist1[11].Location.X != 730) { pblist1[11].Location = new Point(pblist1[11].Location.X + 40, pblist1[11].Location.Y); }
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 		private void timer1_Tick(object sender, EventArgs e)
 		{
