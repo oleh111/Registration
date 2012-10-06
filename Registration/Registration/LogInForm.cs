@@ -57,8 +57,8 @@ namespace Registration
 			if (cntrl.validate(textBox1.Text, cntrl.ComputeStringMD5Hash(textBox2.Text)))
 			{
 				this.Hide();
-                Loading load = new Loading();
-                load.ShowDialog(cntrl.getForm());
+                //Loading load = new Loading();
+                //load.ShowDialog(cntrl.getForm());
 				cntrl.Shop(textBox1.Text,textBox2.Text);
 			}
 			else

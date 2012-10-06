@@ -86,6 +86,15 @@ namespace Registration
 			text.Add("The Witcher is an action role-playing video game  \n developed by CD Projekt RED and published by Atari. \n The game is based on the book series by Polish author Andrzej Sapkowski.\n The Witcher takes place in a medieval fantasy world and follows the story of Geralt, \n one of a few remaining witchers – traveling monster hunter for hire,\n gifted with unnatural powers. The game's system of 'moral choices' \n as part of the storyline was noted for its time-delayed \n consequences and lack of black-and-white morality.\n\n\n So if you want ot play Witcher, order it now!");
 			text.Add("Battlefield 3 (commonly abbreviated BF3) is a first-person shooter video game \n developed by EA Digital Illusions CE and published by Electronic Arts.\n It is a direct sequel to 2005's Battlefield 2, \n and the twelfth installment in the Battlefield franchise. \n\n\n So if you want to play Battle field 3 - order it now!");
 			text.Add("Diablo III is an action role-playing hack and slash video game \n developed and published by Blizzard Entertainment. \n It is the third installment in the Diablo franchise.\n The game, which features elements of the hack and slash genre, \n was released in North America, Latin America, Europe, South Korea, and Taiwan\n  on May 15, 2012, and in Russia on June 7, 2012.\n Before its release, the game broke several presale records \n and became the most pre-ordered PC game to date on Amazon.com.\n Diablo III subsequently set the new all-time record \n for fastest-selling PC game by selling over 3.5 million copies  \n in the first 24 hours of its release. \n\n\n So by it immidiately !!!");
+			
+			this.label1.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 200), 100);
+			this.label2.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 200), 120);
+			this.label16.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 20), 10);
+			this.label15.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 40), 10);
+			this.tabControl1.Location = new System.Drawing.Point((int)(SystemInformation.PrimaryMonitorSize.Width * 0.1265), (int)(SystemInformation.PrimaryMonitorSize.Height * 0.205));
+			this.tabControl1.Size = new System.Drawing.Size((int)(SystemInformation.PrimaryMonitorSize.Width*0.728), (int)(SystemInformation.PrimaryMonitorSize.Height*0.72));
+			this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+			
 			for (int i = 0; i < pblist.Count; i++)
 			{
 				int k = i;
@@ -97,7 +106,7 @@ namespace Registration
 				}
 				string path = "..\\..\\pictures\\";
 				pblist[i].BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-				pblist[i].Location = new System.Drawing.Point(10 + k * 150, 350+j);
+				pblist[i].Location = new System.Drawing.Point(10 + k * 150, 400+j);
 				pblist[i].Name = (i).ToString();
 				pblist[i].Size = new System.Drawing.Size(150, 150);
 				pblist[i].SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -229,6 +238,7 @@ namespace Registration
 				Caller.Location = new System.Drawing.Point(Caller.Location.X, Caller.Location.Y - 150);
 			}
 			Caller.Size = new System.Drawing.Size(300, 300);
+
 			Caller.BringToFront();
 		}
 		private void pictureBoxi_MouseLeave(object sender, EventArgs e)
@@ -400,11 +410,19 @@ namespace Registration
 			llist.Add(label12);
 			llist.Add(label13);
 			llist.Add(label14);
+			int k = 0;
+			int u = 0;
 			for (int i = 0; i < 12; i++)
 			{
 				llist[i].Visible = false;
 				pblist1[i].Visible = false;
 				pblist1[i].SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+				llist[i].Location = new Point(10+u*300, 75+150*k);
+				k++;
+				if (i == 3) { k = 0; }
+				if (i == 7) { k = 0; }
+				if (i >= 3) { u = 1; }
+				if (i >= 7) { u = 2; }
 			}
 			int iii = 0;
 			if( user.Glib.size() - 2 >= 0)
@@ -416,6 +434,8 @@ namespace Registration
 				string path = "..\\..\\pictures\\page2\\";
 				llist[i].Visible = true;
 				pblist1[i].Visible = true;
+				pblist1[i].BringToFront();
+				pblist1[i].Size = new System.Drawing.Size(150, 150); 
 				llist[i].Text = user.Glib.getByIndex(i).Name;
 				string src = path + user.Glib.getByIndex(i).Name + ".jpg";
 				Image image = Image.FromFile(src);
