@@ -116,7 +116,20 @@ namespace Registration
 
 		private void PaymentForm_Load(object sender, EventArgs e)
 		{
+			button1.TabStop = false;
+			button2.TabStop = false;
+			AcceptButton = button1;
+			CancelButton = button2;
+		}
 
+		private void button1_Click(object sender, EventArgs e)
+		{
+			OKLabel_Click(sender, e);
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			CancelLabel_Click(sender, e);
 		}
 
         //private void PaymentForm_MouseEnter(object sender, EventArgs e)

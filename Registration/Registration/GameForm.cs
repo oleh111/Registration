@@ -50,17 +50,23 @@ namespace Registration
 
 		private void GameForm_Load(object sender, EventArgs e)
 		{
-
+			button3.TabStop = false;
+			button4.TabStop = false;
+			AcceptButton = button3;
+			CancelButton = button4;
 		}
 
 
 		private void button1_Click_1(object sender, EventArgs e)
 		{
-			PaymentForm pform = new PaymentForm();
-			pform.ShowDialog();
-			if (pform.DialogResult == DialogResult.OK)
+			if (button1.Enabled == true)
 			{
-				this.DialogResult = DialogResult.OK;
+				PaymentForm pform = new PaymentForm();
+				pform.ShowDialog();
+				if (pform.DialogResult == DialogResult.OK)
+				{
+					this.DialogResult = DialogResult.OK;
+				}
 			}
 		}
 
@@ -127,6 +133,16 @@ namespace Registration
 		private void label6_MouseLeave(object sender, EventArgs e)
 		{
 			label6.ForeColor = Color.DarkGray;
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			button1_Click_1(sender, e);
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+			button2_Click_1(sender, e);
 		}
 	}
 }

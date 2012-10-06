@@ -46,6 +46,8 @@
 			this.textBox4 = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.button3 = new System.Windows.Forms.Button();
+			this.button4 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
@@ -54,7 +56,7 @@
 			// 
 			this.textBox1.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.textBox1.Location = new System.Drawing.Point(21, 49);
-			this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(187, 22);
 			this.textBox1.TabIndex = 0;
@@ -64,7 +66,7 @@
 			// 
 			this.textBox2.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.textBox2.Location = new System.Drawing.Point(21, 79);
-			this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textBox2.Margin = new System.Windows.Forms.Padding(4);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.PasswordChar = '*';
 			this.textBox2.Size = new System.Drawing.Size(187, 22);
@@ -75,7 +77,7 @@
 			// 
 			this.textBox3.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.textBox3.Location = new System.Drawing.Point(21, 110);
-			this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textBox3.Margin = new System.Windows.Forms.Padding(4);
 			this.textBox3.Name = "textBox3";
 			this.textBox3.PasswordChar = '*';
 			this.textBox3.Size = new System.Drawing.Size(187, 22);
@@ -99,7 +101,7 @@
             "China",
             "Other"});
 			this.comboBox1.Location = new System.Drawing.Point(21, 139);
-			this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(188, 24);
 			this.comboBox1.TabIndex = 3;
@@ -200,7 +202,7 @@
             "1986",
             "1985"});
 			this.comboBox2.Location = new System.Drawing.Point(21, 171);
-			this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
 			this.comboBox2.Name = "comboBox2";
 			this.comboBox2.Size = new System.Drawing.Size(188, 24);
 			this.comboBox2.TabIndex = 12;
@@ -313,6 +315,26 @@
 			this.pictureBox2.TabIndex = 20;
 			this.pictureBox2.TabStop = false;
 			// 
+			// button3
+			// 
+			this.button3.Location = new System.Drawing.Point(500, 500);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(75, 23);
+			this.button3.TabIndex = 21;
+			this.button3.Text = "button3";
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
+			// 
+			// button4
+			// 
+			this.button4.Location = new System.Drawing.Point(500, 525);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(75, 23);
+			this.button4.TabIndex = 22;
+			this.button4.Text = "button4";
+			this.button4.UseVisualStyleBackColor = true;
+			this.button4.Click += new System.EventHandler(this.button4_Click);
+			// 
 			// RegistrationForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -320,6 +342,8 @@
 			this.BackColor = System.Drawing.SystemColors.WindowFrame;
 			this.BackgroundImage = global::Registration.Properties.Resources.register_bg2;
 			this.ClientSize = new System.Drawing.Size(421, 396);
+			this.Controls.Add(this.button4);
+			this.Controls.Add(this.button3);
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.textBox4);
@@ -340,7 +364,7 @@
 			this.Controls.Add(this.textBox1);
 			this.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "RegistrationForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "RegistrationForm";
@@ -377,5 +401,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.PictureBox pictureBox2;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button button4;
 	}
 }

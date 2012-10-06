@@ -36,7 +36,10 @@ namespace Registration
 
 		private void LogInForm_Load(object sender, EventArgs e)
 		{
-
+			button1.TabStop = false;
+			button2.TabStop = false;
+			CancelButton = button2;
+			AcceptButton = button1;
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -152,12 +155,9 @@ namespace Registration
         }
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                label1_Click(this, EventArgs.Empty);
-            }
-        }
+		{
+
+		}
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -165,16 +165,23 @@ namespace Registration
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                label1_Click(this, EventArgs.Empty);
-            }
-        }
+		{
+
+		}
 
         private void LogInForm_KeyDown(object sender, KeyEventArgs e)
         {
             
         }
+
+		private void button1_Click_1(object sender, EventArgs e)
+		{
+			label1_Click(this, EventArgs.Empty);
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			this.Dispose();
+		}
 	}
 }

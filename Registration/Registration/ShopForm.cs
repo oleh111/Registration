@@ -114,8 +114,9 @@ namespace Registration
 				t1.Add(src);
 				t2.Add(text[i]);
 				t3.Add(src3);
-				initializeTabPage2();
+				//initializeTabPage2();
 			}
+			initializeTabPage2();
 		}
 
 		private void label2_Click(object sender, EventArgs e)
@@ -146,6 +147,8 @@ namespace Registration
 		private void ShopForm_Load(object sender, EventArgs e)
 		{
 			timer1.Start();
+			button1.TabStop = false;
+			CancelButton = button1;
 		}
 
 		private void timerPage1()
@@ -275,15 +278,15 @@ namespace Registration
 		public int Times=0;
 		private void BoughtPictures_Click(object sender, EventArgs e)
 		{
-			if (Times == 0)
-			{
+			/*if (Times == 0)
+			{*/
 				PictureBox Caller = sender as PictureBox;
 				string name = Caller.Name;
 				int i = ConvertNameIntoNumbaNiggazYo(name);
 				Buy(i);
-			}
+			/*}
 			Times++;
-			if (Times == 13) { Times = 0; }
+			if (Times == 13) { Times = 0; }*/
 		}
 
 		private void tabPage1_Click(object sender, EventArgs e)
@@ -466,6 +469,11 @@ namespace Registration
 				if (k > 3) { k = k - 4; }
 				pblist1[i].Location = new Point(-150, 3 + 156 * k);
 			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			label2_Click(sender, e);
 		}
 	}
 }

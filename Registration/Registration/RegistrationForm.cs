@@ -32,7 +32,10 @@ namespace Registration
 
 		private void RegistrationForm_Load(object sender, EventArgs e)
 		{
-
+			button3.TabStop = false;
+			button4.TabStop = false;
+			CancelButton = button3;
+			AcceptButton = button4;
         }
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
@@ -148,16 +151,19 @@ namespace Registration
 		}
 		private void button1_Click_1(object sender, EventArgs e)
 		{
-            if (rcntrl.checkCaptcha(textBox4.Text))
-            {
-                rcntrl.createPerson(textBox1.Text, rcntrl.ComputeStringMD5Hash(textBox2.Text), comboBox1.Text, comboBox2.Text);
-                this.DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                repaintCaptcha = true;
-                this.Invalidate();
-            }
+			if (button1.Visible == true)
+			{
+				if (rcntrl.checkCaptcha(textBox4.Text))
+				{
+					rcntrl.createPerson(textBox1.Text, rcntrl.ComputeStringMD5Hash(textBox2.Text), comboBox1.Text, comboBox2.Text);
+					this.DialogResult = DialogResult.OK;
+				}
+				else
+				{
+					repaintCaptcha = true;
+					this.Invalidate();
+				}
+			}
             
 		}
 		private void button1_Hover(object sender, EventArgs e)
@@ -260,5 +266,20 @@ namespace Registration
         {
             label7.ForeColor = Color.DarkGray;
         }
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			this.DialogResult = DialogResult.Cancel;
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+			button1_Click_1(sender, e);
+		}
+
+		private void comboBox1_ValueMemberChanged(object sender, EventArgs e)
+		{
+			comboBox1_TextChanged(sender, e);
+		}
 	}
 }
