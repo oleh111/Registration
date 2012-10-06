@@ -91,7 +91,7 @@ namespace Registration
 			this.label2.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 200), 120);
 			this.label16.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 20), 10);
 			this.label15.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 40), 10);
-			this.tabControl1.Location = new System.Drawing.Point((int)(SystemInformation.PrimaryMonitorSize.Width * 0.1265), (int)(SystemInformation.PrimaryMonitorSize.Width * 0.8 * 0.205));
+			this.tabControl1.Location = new System.Drawing.Point((int)(SystemInformation.PrimaryMonitorSize.Width * 0.136), (int)((-(SystemInformation.PrimaryMonitorSize.Width*0.8*0.72)+SystemInformation.PrimaryMonitorSize.Height)/2));
 			this.tabControl1.Size = new System.Drawing.Size((int)(SystemInformation.PrimaryMonitorSize.Width * 0.728), (int)(SystemInformation.PrimaryMonitorSize.Width * 0.8 * 0.72));
 			this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
 			
@@ -163,7 +163,7 @@ namespace Registration
 		private void timerPage1()
 		{
 			n++;
-			if ((n <= 731) && (n > 500))
+			if ((n <= 808) && (n > 500))
 			{
 				pictureBox1.Location = new Point(pictureBox1.Location.X - 1, pictureBox1.Location.Y);
 				pictureBox2.Location = new Point(pictureBox2.Location.X - 1, pictureBox2.Location.Y);
@@ -171,26 +171,26 @@ namespace Registration
 				pictureBox4.Location = new Point(pictureBox4.Location.X - 1, pictureBox4.Location.Y);
 				pictureBox5.Location = new Point(pictureBox5.Location.X - 1, pictureBox5.Location.Y);
 			}
-			if (n == 731) { n = 0; }
-			if (pictureBox1.Location.X == -231)
+			if (n == 808) { n = 0; }
+			if (pictureBox1.Location.X == -308)
 			{
-				pictureBox1.Location = new Point(924, 50);
+				pictureBox1.Location = new Point(1232, 62);
 			}
-			if (pictureBox2.Location.X == -231)
+			if (pictureBox2.Location.X == -308)
 			{
-				pictureBox2.Location = new Point(924, 50);
+				pictureBox2.Location = new Point(1232, 62);
 			}
-			if (pictureBox3.Location.X == -231)
+			if (pictureBox3.Location.X == -308)
 			{
-				pictureBox3.Location = new Point(924, 50);
+				pictureBox3.Location = new Point(1232, 62);
 			}
-			if (pictureBox4.Location.X == -231)
+			if (pictureBox4.Location.X == -308)
 			{
-				pictureBox4.Location = new Point(924, 50);
+				pictureBox4.Location = new Point(1232, 62);
 			}
-			if (pictureBox5.Location.X == -231)
+			if (pictureBox5.Location.X == -308)
 			{
-				pictureBox5.Location = new Point(924, 50);
+				pictureBox5.Location = new Point(924, 62);
 			}
 		}
 
