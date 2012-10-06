@@ -682,7 +682,7 @@ namespace Registration
 			// 
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
 			this.BackgroundImage = global::Registration.Properties.Resources.shp_bg;
-			this.ClientSize = new System.Drawing.Size(1280, 1024);
+			this.ClientSize = new System.Drawing.Size(SystemInformation.PrimaryMonitorSize.Width, SystemInformation.PrimaryMonitorSize.Height);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label15);
 			this.Controls.Add(this.label16);
