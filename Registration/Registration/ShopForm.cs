@@ -29,7 +29,7 @@ namespace Registration
 		private bool Move;
 		private int X;
 		private int Y;
-
+		private int koeficient;
 		private int n;
 
 		public ShopForm(ShopControl _sControl,Person _user,Library _libr)
@@ -73,6 +73,7 @@ namespace Registration
 			pblist.Add(pictureBox15);
 			pblist.Add(pictureBox16);
 			pblist.Add(pictureBox17);
+			koeficient = (int)(SystemInformation.PrimaryMonitorSize.Height/1024);
 			List<string> text=new List<string>();
 			text.Add("Team Fortress 2 - innovating roleplay shooter.\n In game you can choose one of 8 roles. \n medic,heavy,scout,demoman,soldair,engineer,spy, and sniper.\n Each of them has own changeble weapons and history. \n There are lots of different types and game modes,maps and missions.\n You will be defending castles, deathmatching, storming and capturing flags!\n\n\n So if you want to have fun in Team fortress 2 order it now.");
 			text.Add("StarCraft 2 - Chalenging RTS, next chapter of SC\n Nowadays SC2 is the most popular eSport game\n Most exciting game tournaments, epic battles and mindgames are here\n\n For people who came to see next chapter of Raynor's story Starcraft2 \n has a lot to see nad play in new campaign. \n There are still 3 different sides in space war: Zergs,Protoss,Terran\n You will be excited by comanding space marines \n or invading worlds with your swarm \n\n\n So if you want to have fun in Starcraft 2 order it now.");
@@ -101,11 +102,11 @@ namespace Registration
 				if (i >= 6)
 				{
 					k = i - 6;
-					j = 152;
+					j = 152*koeficient;
 				}
 				string path = "..\\..\\pictures\\";
 				pblist[i].BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-				pblist[i].Location = new System.Drawing.Point(10 + k * 150, 400+j);
+				pblist[i].Location = new System.Drawing.Point(10 + k * 150 * koeficient, 400*koeficient+j);
 				pblist[i].Name = (i).ToString();
 				pblist[i].Size = new System.Drawing.Size(150, 150);
 				pblist[i].SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
