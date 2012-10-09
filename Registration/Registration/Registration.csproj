@@ -80,6 +80,12 @@
     </Compile>
     <Compile Include="GameFormController.cs" />
     <Compile Include="GameLibrary.cs" />
+    <Compile Include="IndieGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IndieGame.Designer.cs">
+      <DependentUpon>IndieGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Library.cs" />
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
@@ -123,6 +129,9 @@
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IndieGame.resx">
+      <DependentUpon>IndieGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>

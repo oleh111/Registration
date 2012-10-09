@@ -87,6 +87,9 @@ namespace Registration
 			this.pictureBox19 = new System.Windows.Forms.PictureBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.pictureBox18 = new System.Windows.Forms.PictureBox();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.label18 = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
 			this.label16 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
@@ -123,6 +126,7 @@ namespace Registration
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+			this.tabPage3.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -330,6 +334,7 @@ namespace Registration
 			// 
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
 			this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -339,7 +344,7 @@ namespace Registration
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.Padding = new System.Drawing.Point(0, 0);
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(200, 100);
+			this.tabControl1.Size = new System.Drawing.Size(397, 273);
 			this.tabControl1.TabIndex = 12;
 			// 
 			// tabPage1
@@ -367,7 +372,7 @@ namespace Registration
 			this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-			this.tabPage1.Size = new System.Drawing.Size(192, 74);
+			this.tabPage1.Size = new System.Drawing.Size(389, 247);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Steamie Shop";
 			this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -375,6 +380,7 @@ namespace Registration
 			// tabPage2
 			// 
 			this.tabPage2.BackColor = System.Drawing.SystemColors.MenuText;
+			this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.tabPage2.Controls.Add(this.label14);
 			this.tabPage2.Controls.Add(this.label13);
 			this.tabPage2.Controls.Add(this.label12);
@@ -403,7 +409,7 @@ namespace Registration
 			this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-			this.tabPage2.Size = new System.Drawing.Size(192, 166);
+			this.tabPage2.Size = new System.Drawing.Size(389, 247);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "My Library";
 			this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
@@ -637,6 +643,40 @@ namespace Registration
 			this.pictureBox18.TabIndex = 0;
 			this.pictureBox18.TabStop = false;
 			// 
+			// tabPage3
+			// 
+			this.tabPage3.BackColor = System.Drawing.Color.Black;
+			this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.tabPage3.Controls.Add(this.label18);
+			this.tabPage3.Controls.Add(this.label17);
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Size = new System.Drawing.Size(389, 247);
+			this.tabPage3.TabIndex = 0;
+			this.tabPage3.Text = "Indie games";
+			// 
+			// label18
+			// 
+			this.label18.AutoSize = true;
+			this.label18.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label18.ForeColor = System.Drawing.Color.DarkGreen;
+			this.label18.Location = new System.Drawing.Point(8, 31);
+			this.label18.Name = "label18";
+			this.label18.Size = new System.Drawing.Size(103, 28);
+			this.label18.TabIndex = 1;
+			this.label18.Text = "+Add game";
+			this.label18.Click += new System.EventHandler(this.label18_Click);
+			// 
+			// label17
+			// 
+			this.label17.AutoSize = true;
+			this.label17.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label17.Location = new System.Drawing.Point(4, 4);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(711, 23);
+			this.label17.TabIndex = 0;
+			this.label17.Text = "Indie game page. every game developer can deploy his own game up here";
+			// 
 			// label15
 			// 
 			this.label15.AutoSize = true;
@@ -682,7 +722,7 @@ namespace Registration
 			// 
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
 			this.BackgroundImage = global::Registration.Properties.Resources.shp_bg;
-			this.ClientSize = new System.Drawing.Size(SystemInformation.PrimaryMonitorSize.Width, SystemInformation.PrimaryMonitorSize.Height);
+			this.ClientSize = new System.Drawing.Size(1280, 1024);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label15);
 			this.Controls.Add(this.label16);
@@ -733,6 +773,8 @@ namespace Registration
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+			this.tabPage3.ResumeLayout(false);
+			this.tabPage3.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -791,5 +833,8 @@ namespace Registration
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Button button1;
+		private TabPage tabPage3;
+		private Label label17;
+		private Label label18;
 	}
 }

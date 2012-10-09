@@ -31,9 +31,12 @@ namespace Registration
 		private int Y;
 		private int koeficient;
 		private int n;
+		private List<Label> newgameList;
 
 		public ShopForm(ShopControl _sControl,Person _user,Library _libr)
 		{
+			initializeTabPage3();
+			newgameList = new List<Label>();
 			glibr = new GameLibrary();
 			glibr.Add(new Game("Team Fortress 2"));
 			glibr.Add(new Game("Star Craft 2"));
@@ -415,6 +418,9 @@ namespace Registration
 			if (name == "Diablo 3") { return 11; }
 			return 0;
 		}
+		private void initializeTabPage3()
+		{
+		}
 		private void initializeTabPage2()
 		{
 			pblist1.Add(pictureBox18);
@@ -525,6 +531,26 @@ namespace Registration
 		private void button1_Click(object sender, EventArgs e)
 		{
 			label2_Click(sender, e);
+		}
+
+		private void label18_Click(object sender, EventArgs e)
+		{
+			Label temp = new Label();
+			this.tabPage3.Controls.Add(temp);
+			temp.Text = "new game";
+			
+			temp.Location = new Point(4, newgameList.Count * 25 + 75);
+			newgameList.Add(temp);
+			attachEvent(newgameList.Count-1);
+		}
+		private void attachEvent(int i)
+		{
+			newgameList[i].DoubleClick+=new EventHandler(newGame1Click);
+		}
+		private void newGame1Click(object sender, EventArgs e)
+		{
+			IndieGame igame = new IndieGame();
+			igame.run();
 		}
 	}
 }
