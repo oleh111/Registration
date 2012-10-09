@@ -183,5 +183,10 @@ namespace Registration
 		{
 			this.Dispose();
 		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			cntrl.Admin();
+		}
 	}
 }

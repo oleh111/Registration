@@ -16,6 +16,7 @@ namespace Registration
 		private string password;
 		private string age;
 		private string country;
+		private string security;
 
 		private GameLibrary glib;
 		public Person()
@@ -25,12 +26,19 @@ namespace Registration
 			password = "";
 			age = "";
 			country = "";
+			security = "user";
 		}
 		[DataMember]
 		public string Login
 		{
 			get { return login; }
 			set { login = value; }
+		}
+		[DataMember]
+		public string Security
+		{
+			get { return security; }
+			set { security = value; }
 		}
 
 		[DataMember]
@@ -71,6 +79,7 @@ namespace Registration
 			age = _age;
 			country = _country;
 			glib = new GameLibrary();
+			security = "user";
 		}
 		public string getLogin(){return login;}
 		public string getPassword() { return password; }

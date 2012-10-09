@@ -92,6 +92,25 @@ namespace Registration
 			}
 		}
 
+		public void Admin()
+		{
+			AdminFormController aControl = new AdminFormController(libr);
+			DialogResult dlgResult = aControl.Run(form);
+			if (dlgResult==DialogResult.OK)
+			{
+				libr = aControl.getLibr();
+				string path = "..\\..\\DataBase.json";
+				File.WriteAllText(path, "");
+				System.Web.Script.Serialization.JavaScriptSerializer oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+				for (int i = 0; i < libr.Bracket.Count; i++)
+				{
+					string sJSON = oSerializer.Serialize(libr.Bracket[i]);
+					sJSON += "\n";
+					File.AppendAllText(path, sJSON);
+				}
+			}
+		}
+
         public LogInForm getForm()
         {
             return form;
