@@ -10,7 +10,7 @@ namespace Registration
 	[DataContract]
 	public class Game
 	{
-		private string name;
+		protected string name;
 
 		public Game()
 		{

@@ -93,6 +93,7 @@ namespace Registration
 			this.label15 = new System.Windows.Forms.Label();
 			this.label16 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
+			this.pictureBox30 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -127,6 +128,7 @@ namespace Registration
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
 			this.tabPage3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -339,12 +341,12 @@ namespace Registration
 			this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.tabControl1.ItemSize = new System.Drawing.Size(462, 18);
-			this.tabControl1.Location = new System.Drawing.Point(162, 211);
+			this.tabControl1.Location = new System.Drawing.Point(201, 211);
 			this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.Padding = new System.Drawing.Point(0, 0);
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(397, 273);
+			this.tabControl1.Size = new System.Drawing.Size(931, 738);
 			this.tabControl1.TabIndex = 12;
 			// 
 			// tabPage1
@@ -647,11 +649,12 @@ namespace Registration
 			// 
 			this.tabPage3.BackColor = System.Drawing.Color.Black;
 			this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.tabPage3.Controls.Add(this.pictureBox30);
 			this.tabPage3.Controls.Add(this.label18);
 			this.tabPage3.Controls.Add(this.label17);
 			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Size = new System.Drawing.Size(389, 247);
+			this.tabPage3.Size = new System.Drawing.Size(923, 712);
 			this.tabPage3.TabIndex = 0;
 			this.tabPage3.Text = "Indie games";
 			// 
@@ -718,6 +721,16 @@ namespace Registration
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
+			// pictureBox30
+			// 
+			this.pictureBox30.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox30.Image")));
+			this.pictureBox30.Location = new System.Drawing.Point(481, 64);
+			this.pictureBox30.Name = "pictureBox30";
+			this.pictureBox30.Size = new System.Drawing.Size(442, 652);
+			this.pictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox30.TabIndex = 2;
+			this.pictureBox30.TabStop = false;
+			// 
 			// ShopForm
 			// 
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -735,6 +748,7 @@ namespace Registration
 			this.Name = "ShopForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "ShopForm";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShopForm_FormClosing);
 			this.Load += new System.EventHandler(this.ShopForm_Load);
 			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ShopForm_MouseDown);
 			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ShopForm_MouseMove);
@@ -775,6 +789,7 @@ namespace Registration
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
 			this.tabPage3.ResumeLayout(false);
 			this.tabPage3.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -836,5 +851,6 @@ namespace Registration
 		private TabPage tabPage3;
 		private Label label17;
 		private Label label18;
+		private PictureBox pictureBox30;
 	}
 }

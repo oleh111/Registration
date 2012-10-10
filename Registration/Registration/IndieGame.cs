@@ -20,9 +20,20 @@ namespace Registration
 		{
 			return this.ShowDialog();
 		}
+		public DialogResult run(Indie game)
+		{
+			textBox1.Text = game.Name;
+			richTextBox1.Text = game.Description;
+			return this.ShowDialog();
+		}
 		private void IndieGame_Load(object sender, EventArgs e)
 		{
 
+		}
+
+		private void label3_Click(object sender, EventArgs e)
+		{
+			this.DialogResult=DialogResult.OK;
 		}
 	}
 }

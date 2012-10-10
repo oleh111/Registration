@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="GameFormController.cs" />
     <Compile Include="GameLibrary.cs" />
+    <Compile Include="Indie.cs" />
     <Compile Include="IndieGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +163,7 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="DataBase.json" />
+    <None Include="IndieBase.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

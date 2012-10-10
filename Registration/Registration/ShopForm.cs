@@ -10,6 +10,8 @@ using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 using System.Drawing.Drawing2D;
 
 namespace Registration
@@ -32,10 +34,11 @@ namespace Registration
 		private int koeficient;
 		private int n;
 		private List<Label> newgameList;
+		private List<Indie> indies;
 
 		public ShopForm(ShopControl _sControl,Person _user,Library _libr)
 		{
-			initializeTabPage3();
+			indies = new List<Indie>();
 			newgameList = new List<Label>();
 			glibr = new GameLibrary();
 			glibr.Add(new Game("Team Fortress 2"));
@@ -161,6 +164,19 @@ namespace Registration
 			timer1.Start();
 			button1.TabStop = false;
 			CancelButton = button1;
+
+			string path = "..\\..\\IndieBase.json";
+			string sJSON;
+			System.Web.Script.Serialization.JavaScriptSerializer oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+			System.IO.StreamReader file = new System.IO.StreamReader(path);
+			while ((sJSON = file.ReadLine()) != null)
+			{
+				Indie nana;
+				nana = JsonConvert.DeserializeObject<Indie>(sJSON);
+				indies.Add(nana);
+			}
+			file.Close();
+			initializeTabPage3();
 		}
 
 		private void timerPage1()
@@ -420,6 +436,16 @@ namespace Registration
 		}
 		private void initializeTabPage3()
 		{
+			for (int i = 0; i < indies.Count; i++)
+			{
+				Label temp = new Label();
+				this.tabPage3.Controls.Add(temp);
+				temp.Text = indies[i].Name;
+
+				temp.Location = new Point(4, newgameList.Count * 25 + 75);
+				newgameList.Add(temp);
+				attachEvent(newgameList.Count - 1);
+			}
 		}
 		private void initializeTabPage2()
 		{
@@ -549,8 +575,41 @@ namespace Registration
 		}
 		private void newGame1Click(object sender, EventArgs e)
 		{
+			Label Caller = sender as Label;
 			IndieGame igame = new IndieGame();
-			igame.run();
+			if (Caller.Text == "new game")
+			{
+				igame.run();
+				Caller.Text = igame.textBox1.Text;
+				Indie gamie = new Indie(igame.textBox1.Text, igame.richTextBox1.Text);
+				indies.Add(gamie);
+			}
+			else
+			{
+				for (int i = 0; i < indies.Count; i++)
+				{
+					if (Caller.Text == indies[i].Name)
+					{
+						igame.run(indies[i]);
+						Caller.Text = igame.textBox1.Text;
+						Indie gamie = new Indie(igame.textBox1.Text, igame.richTextBox1.Text);
+						indies[i] = gamie;
+					}
+				}
+			}
+		}
+
+		private void ShopForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			string path = "..\\..\\IndieBase.json";
+			File.WriteAllText(path, "");
+			System.Web.Script.Serialization.JavaScriptSerializer oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+			for (int i = 0; i < indies.Count; i++)
+			{
+				string sJSON = oSerializer.Serialize(indies[i]);
+				sJSON += "\n";
+				File.AppendAllText(path, sJSON);
+			}
 		}
 	}
 }
