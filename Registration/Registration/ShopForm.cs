@@ -315,18 +315,8 @@ namespace Registration
 			DialogResult dlgResult = gfcntrl.Run(this);
 			if (dlgResult == DialogResult.OK)
 			{
-				string path = "..\\..\\DataBase.json";
 				user.Glib.Add(glibr.Get(i));
 				libr.Set(user);
-				System.Web.Script.Serialization.JavaScriptSerializer oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-				File.WriteAllText(path, "");
-				for (int j = 0; j < libr.size(); j++)
-				{
-					string sJSON = oSerializer.Serialize(libr.getByIndex(j));
-					sJSON += "\n";
-					File.AppendAllText(path, sJSON);
-
-				}
 				initializeTabPage2();
 			}
 		}
@@ -632,6 +622,18 @@ namespace Registration
 		private void UserClick(object sender)
 		{
 			Label Caller = sender as Label;
+			UserIndieGame igame=new UserIndieGame();
+			for (int i = 0; i < indies.Count; i++)
+			{
+				if (Caller.Text == indies[i].Name)
+				{
+					if (igame.run(indies[i], user) == DialogResult.OK)
+					{
+						user = igame.getUser();
+					}
+				}
+			}
+
 		}
 		private void AdminClick(object sender)
 		{
@@ -688,6 +690,16 @@ namespace Registration
 				string sJSON = oSerializer.Serialize(indies[i]);
 				sJSON += "\n";
 				File.AppendAllText(path, sJSON);
+			}
+
+			path = "..\\..\\DataBase.json";
+			File.WriteAllText(path, "");
+			for (int j = 0; j < libr.size(); j++)
+			{
+				string sJSON = oSerializer.Serialize(libr.getByIndex(j));
+				sJSON += "\n";
+				File.AppendAllText(path, sJSON);
+
 			}
 		}
 

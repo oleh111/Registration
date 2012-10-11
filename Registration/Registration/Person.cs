@@ -17,11 +17,12 @@ namespace Registration
 		private string age;
 		private string country;
 		private string security;
-
+		private List<Indie> iGlib;
 		private GameLibrary glib;
 		public Person()
 		{
 			glib = new GameLibrary();
+			iGlib = new List<Indie>();
 			login = "";
 			password = "";
 			age = "";
@@ -33,6 +34,12 @@ namespace Registration
 		{
 			get { return login; }
 			set { login = value; }
+		}
+		[DataMember]
+		public List<Indie> IGlib
+		{
+			get { return iGlib; }
+			set { iGlib = value; }
 		}
 		[DataMember]
 		public string Security
@@ -78,6 +85,7 @@ namespace Registration
 			password = _password;
 			age = _age;
 			country = _country;
+			iGlib = new List<Indie>();
 			glib = new GameLibrary();
 			security = "user";
 		}
