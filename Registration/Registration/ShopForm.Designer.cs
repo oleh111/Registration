@@ -88,12 +88,12 @@ namespace Registration
 			this.label3 = new System.Windows.Forms.Label();
 			this.pictureBox18 = new System.Windows.Forms.PictureBox();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.pictureBox30 = new System.Windows.Forms.PictureBox();
 			this.label18 = new System.Windows.Forms.Label();
 			this.label17 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
 			this.label16 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
-			this.pictureBox30 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -374,7 +374,7 @@ namespace Registration
 			this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-			this.tabPage1.Size = new System.Drawing.Size(389, 247);
+			this.tabPage1.Size = new System.Drawing.Size(923, 712);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Steamie Shop";
 			this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -411,7 +411,7 @@ namespace Registration
 			this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-			this.tabPage2.Size = new System.Drawing.Size(389, 247);
+			this.tabPage2.Size = new System.Drawing.Size(923, 712);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "My Library";
 			this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
@@ -657,6 +657,17 @@ namespace Registration
 			this.tabPage3.Size = new System.Drawing.Size(923, 712);
 			this.tabPage3.TabIndex = 0;
 			this.tabPage3.Text = "Indie games";
+			this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+			// 
+			// pictureBox30
+			// 
+			this.pictureBox30.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox30.Image")));
+			this.pictureBox30.Location = new System.Drawing.Point(431, 64);
+			this.pictureBox30.Name = "pictureBox30";
+			this.pictureBox30.Size = new System.Drawing.Size(492, 652);
+			this.pictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox30.TabIndex = 2;
+			this.pictureBox30.TabStop = false;
 			// 
 			// label18
 			// 
@@ -720,16 +731,6 @@ namespace Registration
 			this.button1.Text = "button1";
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// pictureBox30
-			// 
-			this.pictureBox30.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox30.Image")));
-			this.pictureBox30.Location = new System.Drawing.Point(481, 64);
-			this.pictureBox30.Name = "pictureBox30";
-			this.pictureBox30.Size = new System.Drawing.Size(442, 652);
-			this.pictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox30.TabIndex = 2;
-			this.pictureBox30.TabStop = false;
 			// 
 			// ShopForm
 			// 

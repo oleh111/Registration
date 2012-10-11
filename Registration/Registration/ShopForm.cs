@@ -18,6 +18,7 @@ namespace Registration
 {
 	public partial class ShopForm : Form
 	{
+		private List<PictureBox> icons;
 		private ShopControl sControl;
 		private List<PictureBox> pblist;
 		private List<PictureBox> pblist1;
@@ -38,6 +39,7 @@ namespace Registration
 
 		public ShopForm(ShopControl _sControl,Person _user,Library _libr)
 		{
+			icons = new List<PictureBox>();
 			indies = new List<Indie>();
 			newgameList = new List<Label>();
 			glibr = new GameLibrary();
@@ -93,6 +95,7 @@ namespace Registration
 			text.Add("The Witcher is an action role-playing video game  \n developed by CD Projekt RED and published by Atari. \n The game is based on the book series by Polish author Andrzej Sapkowski.\n The Witcher takes place in a medieval fantasy world and follows the story of Geralt, \n one of a few remaining witchers – traveling monster hunter for hire,\n gifted with unnatural powers. The game's system of 'moral choices' \n as part of the storyline was noted for its time-delayed \n consequences and lack of black-and-white morality.\n\n\n So if you want ot play Witcher, order it now!");
 			text.Add("Battlefield 3 (commonly abbreviated BF3) is a first-person shooter video game \n developed by EA Digital Illusions CE and published by Electronic Arts.\n It is a direct sequel to 2005's Battlefield 2, \n and the twelfth installment in the Battlefield franchise. \n\n\n So if you want to play Battle field 3 - order it now!");
 			text.Add("Diablo III is an action role-playing hack and slash video game \n developed and published by Blizzard Entertainment. \n It is the third installment in the Diablo franchise.\n The game, which features elements of the hack and slash genre, \n was released in North America, Latin America, Europe, South Korea, and Taiwan\n  on May 15, 2012, and in Russia on June 7, 2012.\n Before its release, the game broke several presale records \n and became the most pre-ordered PC game to date on Amazon.com.\n Diablo III subsequently set the new all-time record \n for fastest-selling PC game by selling over 3.5 million copies  \n in the first 24 hours of its release. \n\n\n So by it immidiately !!!");
+			if (user.Security != "developer") { this.label18.Hide(); }
 			
 			this.label1.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 200), 100);
 			this.label2.Location = new System.Drawing.Point((SystemInformation.PrimaryMonitorSize.Width - 200), 120);
@@ -101,6 +104,7 @@ namespace Registration
 			this.tabControl1.Location = new System.Drawing.Point((int)((SystemInformation.PrimaryMonitorSize.Width - (SystemInformation.PrimaryMonitorSize.Height * 1.25*0.728)) / 2), (int)(SystemInformation.PrimaryMonitorSize.Height * 0.205));
 			this.tabControl1.Size = new System.Drawing.Size((int)(SystemInformation.PrimaryMonitorSize.Height * 1.25 * 0.728), (int)(SystemInformation.PrimaryMonitorSize.Height * 0.72));
 			this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+
 			for (int i = 0; i < pblist.Count; i++)
 			{
 				int k = i;
@@ -439,10 +443,25 @@ namespace Registration
 			for (int i = 0; i < indies.Count; i++)
 			{
 				Label temp = new Label();
+				PictureBox tempi = new PictureBox();
+				this.tabPage3.Controls.Add(tempi);
 				this.tabPage3.Controls.Add(temp);
 				temp.Text = indies[i].Name;
+				tempi.ImageLocation = indies[i].Icon;
+				temp.AutoSize = true;
+				temp.BackColor = System.Drawing.Color.Black;
+				temp.Font = new System.Drawing.Font("Snap ITC", 14.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+				temp.ForeColor = System.Drawing.SystemColors.ButtonFace;
+				temp.Location = new Point(68, newgameList.Count * 65 + 108);
+				tempi.BackColor = Color.Transparent;
+				tempi.Size = new System.Drawing.Size(64, 64);
+				tempi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+				tempi.Location = new Point(4, newgameList.Count * 65 + 75);
 
-				temp.Location = new Point(4, newgameList.Count * 25 + 75);
+				temp.Name = newgameList.Count.ToString();
+				tempi.Name = newgameList.Count.ToString();
+
+				icons.Add(tempi);
 				newgameList.Add(temp);
 				attachEvent(newgameList.Count - 1);
 			}
@@ -562,27 +581,78 @@ namespace Registration
 		private void label18_Click(object sender, EventArgs e)
 		{
 			Label temp = new Label();
+			PictureBox tempi = new PictureBox();
+			this.tabPage3.Controls.Add(tempi);
 			this.tabPage3.Controls.Add(temp);
-			temp.Text = "new game";
-			
-			temp.Location = new Point(4, newgameList.Count * 25 + 75);
+			temp.Text = "New Game";
+			temp.AutoSize = true;
+			temp.BackColor = System.Drawing.Color.Black;
+			temp.Font = new System.Drawing.Font("Snap ITC", 14.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			temp.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			temp.Location = new Point(68, newgameList.Count * 65 + 108);
+			tempi.BackColor = Color.Transparent;
+			tempi.Size = new System.Drawing.Size(64, 64);
+			tempi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			tempi.Location = new Point(4, newgameList.Count * 65 + 75);
+
+			temp.Name = newgameList.Count.ToString();
+			tempi.Name = newgameList.Count.ToString();
+
+			icons.Add(tempi);
 			newgameList.Add(temp);
 			attachEvent(newgameList.Count-1);
 		}
 		private void attachEvent(int i)
 		{
 			newgameList[i].DoubleClick+=new EventHandler(newGame1Click);
+			newgameList[i].MouseEnter+=new EventHandler(newGame1Enter);
+			newgameList[i].MouseLeave += new EventHandler(newGame1Leave);
+		}
+		private void newGame1Enter(object sender, EventArgs e)
+		{
+			Label Caller = sender as Label;
+			Caller.BackColor = Color.Green;
+		}
+		private void newGame1Leave(object sender, EventArgs e)
+		{
+			Label Caller = sender as Label;
+			Caller.BackColor = Color.Transparent;
 		}
 		private void newGame1Click(object sender, EventArgs e)
 		{
+			if (user.Security == "developer")
+			{
+				AdminClick(sender);
+			}
+			else
+			{
+				UserClick(sender);
+			}
+		}
+		private void UserClick(object sender)
+		{
+			Label Caller = sender as Label;
+		}
+		private void AdminClick(object sender)
+		{
 			Label Caller = sender as Label;
 			IndieGame igame = new IndieGame();
-			if (Caller.Text == "new game")
+			this.Hide();
+			if (Caller.Text == "New Game")
 			{
-				igame.run();
-				Caller.Text = igame.textBox1.Text;
-				Indie gamie = new Indie(igame.textBox1.Text, igame.richTextBox1.Text);
-				indies.Add(gamie);
+				if (igame.run() == DialogResult.OK)
+				{
+					for (int i = 0; i < newgameList.Count; i++)
+					{
+						if (Caller.Name == icons[i].Name)
+						{
+							icons[i].Image = igame.pictureBox2.Image;
+						}
+					}
+					Caller.Text = igame.textBox1.Text;
+					Indie gamie = new Indie(igame.textBox1.Text, igame.richTextBox1.Text, igame.pictureBox1.ImageLocation, igame.pictureBox2.ImageLocation);
+					indies.Add(gamie);
+				}
 			}
 			else
 			{
@@ -590,15 +660,24 @@ namespace Registration
 				{
 					if (Caller.Text == indies[i].Name)
 					{
-						igame.run(indies[i]);
-						Caller.Text = igame.textBox1.Text;
-						Indie gamie = new Indie(igame.textBox1.Text, igame.richTextBox1.Text);
-						indies[i] = gamie;
+						if (igame.run(indies[i]) == DialogResult.OK)
+						{
+							for (int j = 0; j < newgameList.Count; j++)
+							{
+								if (Caller.Name == icons[j].Name)
+								{
+									icons[j].Image = igame.pictureBox2.Image;
+								}
+							}
+							Caller.Text = igame.textBox1.Text;
+							Indie gamie = new Indie(igame.textBox1.Text, igame.richTextBox1.Text, igame.pictureBox1.ImageLocation, igame.pictureBox2.ImageLocation);
+							indies[i] = gamie;
+						}
 					}
 				}
 			}
+			this.Show();
 		}
-
 		private void ShopForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			string path = "..\\..\\IndieBase.json";
@@ -610,6 +689,11 @@ namespace Registration
 				sJSON += "\n";
 				File.AppendAllText(path, sJSON);
 			}
+		}
+
+		private void tabPage3_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
